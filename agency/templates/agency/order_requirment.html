@@ -1,0 +1,103 @@
+{% extends 'base2.html'%}
+
+{% block content %}
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+		tinyMCE.init({
+		 	'selector':'textarea'
+		})
+
+
+
+
+</script>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<hr>
+<h2 class="text-center mt-3">Order Requirments</h2>
+<hr>
+<div class="container p-5 mb-5 mt-5" style="background:#F8F8F8;">
+
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Service Type</label>
+
+                <select id="cars" name="service" class="form-control">
+                    <option value="vedio_editing">vedio_editing</option>
+                    <option value="Post-production">Post-production</option>
+
+                </select>
+            </div>
+
+        </div>
+
+               <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Package Type</label>
+
+                <select  name="pkg" class="form-control">
+                    <option value="basic">basic</option>
+                    <option value="standard">standard</option>
+                    <option value="prenium">prenium</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Timing</label>
+                <select name="time" class="form-control">
+                    <option value="5 min">5 min</option>
+                    <option value="10 min">10 min</option>
+                    <option value="15 min">15 min</option>
+                    <option value="20 min">20 min</option>
+                    <option value="30 min">30 min</option>
+                </select></div>
+
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="exampleInputPassword1">Funished Date</label>
+                <input type="date" class="form-control" id="exampleInputPassword1" name="date">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Vedio File</label>
+                <input type="file" class="form-control" name="proj" required>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="">Sample</label>
+                <input type="file" class="form-control" name="sample" required>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="comment">Requirment:</label>
+            <textarea class="form-control" rows="5" id="comment" name="content"></textarea>
+        </div>
+
+
+        <input type="submit" class="btn btn-primary btn-block mt-3" value="Proceed">
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

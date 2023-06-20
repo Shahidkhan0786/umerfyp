@@ -1,0 +1,93 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+nav{
+    background-color: rgb(146, 9, 89);
+    color: rgb(146, 9, 89);
+}
+#navbar{
+    color: black;
+    margin-left: 30%;
+}
+#navbar ul li a{
+color: white;
+margin-right: 10px;
+}
+.navbar-brand{
+    margin-left: 40px;
+}
+#navbar ul li a:hover{
+    background-color: rgb(223, 18, 137);
+    border-radius: 15px;
+    transition: all 0.7s;
+}
+.animated{
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+.reviews img{
+    border: 2px dotted red;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.services i{
+    color: rgb(223, 18, 137);
+    font-size: 100px;
+}
+.footer{
+    background-color: rgb(31, 31, 31);
+    min-height: 400px;
+    color: white;
+    padding-top: 60px;
+}
+.footer a{
+    color: rgb(146, 9, 89);
+    font-size: 20px;
+    text-decoration: none;
+}
+.footer a:hover{
+    color: rgb(223, 18, 137);
+    text-decoration: none;
+}
+.contactus form{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgba(223, 18, 138, 0.349);
+
+}
+.stick_banner{
+    background-image: url("../images/pexels-trinity-kubassek-341858.jpg");
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
+}
+.stick_banner h1 {
+    margin-top: 80px;
+}
+@media only screen and (max-width: 900px) {
+    .header{
+        padding: 20px;
+    }
+    .header h1{
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .header h3{
+        font-size: 17px;
+    }
+    .header h6{
+        font-size: 12px;
+    }
+
+  }

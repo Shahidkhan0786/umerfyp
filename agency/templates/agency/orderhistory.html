@@ -1,0 +1,67 @@
+{% extends 'base2.html'%}
+
+{% block content %}
+<div class="container">
+    <h2 class="bg-dark text-white p-3 text-center">Orders</h2>
+{% for i in ord%}
+    <div class="jumbotron p-3">
+        <span class="text-white bg-dark p-2">{{i.status}}</span>
+        <center>
+        <h1 class="display-6">{{i.service}}</h1>
+        <h1 class="display-6">Hello, world!</h1>
+        </center>
+        <p class="lead">{{i.finish_date}}
+            .</p>
+        <hr class="my-4">
+        <p>{% autoescape off%}{{i.Requirments}}{% endautoescape%}.</p>
+        <p class="lead">
+            <a class="btn btn-danger btn-lg" href="#" onclick="return confirm('After cancelation 70% amount will be return')" role="button">Cancel</a>
+        </p>
+    </div>
+
+       {% if i.status%}
+
+
+<div class="container">
+
+
+		{% if i.status == "Pending" %}
+		<div class="progress">
+ 		 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		{% endif %}
+
+        {% if i.status == "accept" %}
+		<div class="progress">
+ 		 <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 30%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		{% endif %}
+
+        {% if i.status == "Indevelop" %}
+		<div class="progress">
+ 		 <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		{% endif %}
+
+
+        {% if i.status == "completed" %}
+		<div class="progress">
+ 		 <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		{% endif %}
+
+        {% if i.status == "delivered" %}
+		<div class="progress">
+ 		 <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		{% endif %}
+
+</div>
+
+
+{% endif %}
+
+{%endfor%}
+</div>
+
+{% endblock %}
